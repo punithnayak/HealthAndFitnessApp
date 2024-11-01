@@ -1,0 +1,50 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.abhipunith.healthandfitnessapp">
+
+    <uses-permission android:name="android.permission.ACTIVITY_RECOGNITION" />
+    <uses-feature android:name="android.hardware.sensor.stepdetector" android:required="false" />
+    <uses-feature android:name="android.hardware.sensor.stepcounter" android:required="false" />
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.HealthAndFitnessApp">
+
+        <!-- MainActivity is the launcher activity -->
+        <activity
+            android:name="com.abhipunith.healthandfitnessapp.MainActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- Other activities -->
+        <activity android:name="com.abhipunith.healthandfitnessapp.AssessmentActivity" android:exported="true" />
+        <activity android:name="com.abhipunith.healthandfitnessapp.LoginActivity" android:exported="false" />
+        <activity android:name="com.abhipunith.healthandfitnessapp.SignUpActivity" android:exported="false" />
+        <activity android:name="com.abhipunith.healthandfitnessapp.HomeActivity" android:exported="false" />
+        <activity android:name="com.abhipunith.healthandfitnessapp.ProfileActivity" android:exported="true" />
+        <activity android:name="com.abhipunith.healthandfitnessapp.ProgressActivity" android:exported="false" />
+        <activity android:name="com.abhipunith.healthandfitnessapp.DietGuidelinesActivity" />
+        <activity android:name="com.abhipunith.healthandfitnessapp.MiniEATToolActivity" />
+        <activity android:name="com.abhipunith.healthandfitnessapp.StepTrackerActivity" />
+        <activity android:name="com.abhipunith.healthandfitnessapp.NicotineExposureActivity" />
+        <activity android:name="com.abhipunith.healthandfitnessapp.BMITrackerActivity" />
+
+        <!-- Network Connectivity Receiver -->
+        <receiver android:name="com.abhipunith.healthandfitnessapp.NetworkConnectivityReceiver"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
+            </intent-filter>
+        </receiver>
+
+    </application>
+
+</manifest>
